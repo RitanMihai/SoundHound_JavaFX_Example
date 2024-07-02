@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.soundhounddemo.fxml.controllers.HomePageController">
+
+    <!-- Received Text Area -->
+    <Label text="History" />
+    <ListView fx:id="messageListView" VBox.vgrow="ALWAYS" />
+    <HBox>
+        <children>
+            <CheckBox fx:id="isConversationContextActive" alignment="TOP_LEFT" mnemonicParsing="false" text="Keep conversation context " />
+        </children>
+    </HBox>
+    <HBox alignment="TOP_CENTER" depthTest="DISABLE" spacing="5.0">
+        <children>
+            <TextField fx:id="inputTextField" promptText="Enter text to convert to speech" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </TextField>
+            <Button fx:id="sendTextRequest" mnemonicParsing="false" onAction="#handleSendTextRequest" text="Send" />
+            <Button fx:id="recordingButton" mnemonicParsing="false" onAction="#handleRecordButton">
+                <graphic>
+                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@images/ic_blk_houndify_mic_36dp-hdpi.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </children>
+        <VBox.margin>
+            <Insets top="5.0" />
+        </VBox.margin>
+    </HBox>
+    <HBox alignment="TOP_CENTER" depthTest="DISABLE" spacing="5.0">
+        <children>
+            <ComboBox fx:id="microphoneComboBox" promptText="Select Microphone" />
+        </children>
+        <VBox.margin>
+            <Insets top="5.0" />
+        </VBox.margin>
+    </HBox>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>
